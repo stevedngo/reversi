@@ -153,9 +153,9 @@ header {
   overflow-y: hidden;
   background: #7b4397;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #7b4397, #dc2430);
+  background: -webkit-linear-gradient(to left, #009688, #2BB252);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #7b4397, #dc2430);
+  background: linear-gradient(to left, #009688, #2BB252);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: white;
 }
@@ -284,8 +284,8 @@ section.features .feature-item h3 {
 }
 section.features .feature-item i {
   font-size: 80px;
-  background: -webkit-linear-gradient(to left, #7b4397, #dc2430);
-  background: linear-gradient(to left, #7b4397, #dc2430);
+  background: -webkit-linear-gradient(to left, #009688, #2BB252);
+  background: linear-gradient(to left, #009688, #2BB252);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
