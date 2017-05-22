@@ -6,7 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Name</title>
+        <title>Enter your username for Reversi</title>
+        <!-- Scripts -->
+    <script>
+        function submitForm(){
+            var username = $('#username').val();
+            window.location.href = 'lobby.html?username='+username;
+        }
+    </script>    
         <!-- Bootstrap Core CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <!-- Custom Fonts -->
@@ -61,7 +68,14 @@
                     <div class="col-md-7">
                         <div class="header-content">
                             <div class="header-content-inner">
-                                <h1>This is the name page</h1>
+                                <h1>Enter Your Username</h1>
+                <form onsubmit='submitForm(); return false;' class='form-inline'>
+                    <div class='form-group'>
+                        <label for='username' class='col-form-label sr-only'>Enter your username</label>
+                        <input class='form-control' type='text' value='' id='username' placeholder="Enter your username"/>
+                    </div>
+                    <button type='submit' class='btn btn-default btn-primary'>Done</button>
+                </form>
                             </div>
                         </div>
                     </div>
@@ -82,10 +96,11 @@
                 </ul>
             </div>
         </footer>
-        <!-- jQuery -->
-        <!-- Bootstrap Core JavaScript -->
-        <!-- Plugin JavaScript -->
-        <!-- Theme JavaScript -->
+        
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     </body>
 
 </html>
