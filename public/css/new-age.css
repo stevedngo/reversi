@@ -9,10 +9,10 @@
   letter-spacing: 1px;
 }
 .body-font {
-  font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif';
+  font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
 }
 .alt-font {
-  font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
+  font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -22,7 +22,7 @@ body {
   width: 100%;
 }
 body {
-  font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif';
+  font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
 }
 a {
   -webkit-transition: all 0.35s;
@@ -57,6 +57,9 @@ p {
   font-size: 18px;
   line-height: 1.5;
   margin-bottom: 20px;
+}
+b {
+  font-weight:800;
 }
 .navbar-default {
   background-color: white;
