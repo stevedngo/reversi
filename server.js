@@ -156,7 +156,7 @@ io.sockets.on('connection', function (socket) {
 	});
 
 
-		socket.on('disconnect', function(socket){
+		socket.on('disconnect', function(){
 		log('Client disconnected '+JSON.stringify(players[socket.id]));
 
 		if('undefined' !== typeof players[socket.id] && players[socket.id]){
