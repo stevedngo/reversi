@@ -1,0 +1,25 @@
+body {
+  background: #7b4397;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #009688, #2BB252);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #009688, #2BB252);
+}
+
+table#game_board {
+	margin:auto;
+	border-style:solid;
+	border-width:10px;
+	border-color: rgb(100,100,100);
+}
+
+table#game_board td{
+	padding: 5px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgb(50,50,50);
+}
+
+#messages p{
+	margin: 0px;
+}
