@@ -44,7 +44,7 @@ socket.on('join_room_response',function(payload){
 	}
 
 	/* If someone joined then add a new row to the lobby table */
-	var dom_elements = $('.socket_'+payload.socket_id)
+	var dom_elements = $('.socket_'+payload.socket_id);
 	/*If we don't already have an entry for this person */
 	if(dom_elements.length == 0) {
 		var nodeA = $('<div></div>');
@@ -106,8 +106,8 @@ socket.on('player_disconnected',function(payload){
 	}
 
 	/* If someone left the room then animate out all their content */
-	var dom_elements = $('.socket_'+payload.socket_id)
-	/*If something exists */
+	var dom_elements = $('.socket_'+payload.socket_id);
+	/* If something exists */
 	if(dom_elements.length != 0) {
 		dom_elements.slideUp(1000);
 	}
@@ -207,7 +207,7 @@ socket.on('game_start_response',function(payload){
 	$('.socket_'+payload.socket_id+' button').replaceWith(newNode);
 
 	/* Jump to a new page */
-	window.location.href = 'game.html?username='+username+'&game_id='+payload.game_id;
+	window.location.href = 'game.html?username=' +username+'&game_id='+payload.game_id;
 });
 
 

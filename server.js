@@ -502,9 +502,9 @@ io.sockets.on('connection', function (socket) {
 
 			var requested_user = payload.requested_user;
 			if(('undefined' === typeof requested_user) || !requested_user){
-				var error_message = 'uninvite didn\'t specify a requested_user, command aborted';
+				var error_message = 'game_start didn\'t specify a requested_user, command aborted';
 				log(error_message);
-				socket.emit('uninvite_response', {
+				socket.emit('game_start_response', {
 													result: 'fail',
 													message: error_message
 												});
