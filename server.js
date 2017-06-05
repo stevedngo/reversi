@@ -549,7 +549,7 @@ io.sockets.on('connection', function (socket) {
 
 			log('game_start successful');
 		});
-});
+
 
 
 
