@@ -530,7 +530,7 @@ io.sockets.on('connection', function (socket) {
 
 			/* If everything is okay respond to the game_starter that it was successful */
 
-			var game_id = Math.floor((1+Math.random())*0x100000).toString(16).substring(1);
+			var game_id = Math.floor((1+Math.random()) *0x10000).toString(16).substring(1);
 			var success_data = {
 									result: 'success',
 									socket_id: requested_user,
@@ -543,11 +543,13 @@ io.sockets.on('connection', function (socket) {
 			var success_data = {
 									result: 'success',
 									socket_id: socket.id
+									game_id: game_id
 								};
 			socket.to(requested_user).emit('game_start_response', success_data);
 
 			log('game_start successful');
 		});
+});
 
 
 
