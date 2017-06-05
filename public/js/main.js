@@ -23,7 +23,7 @@ if('undefined' == typeof chat_room || !chat_room){
 	chat_room = 'lobby';
 }
 
-/* COnnect to the socket server */
+/* Connect to the socket server */
 var socket = io.connect();
 
 /* What to do when the server sends me a log message */

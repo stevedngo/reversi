@@ -542,7 +542,7 @@ io.sockets.on('connection', function (socket) {
 			/* Tell the other player to play */
 			var success_data = {
 									result: 'success',
-									socket_id: socket.id
+									socket_id: socket.id,
 									game_id: game_id
 								};
 			socket.to(requested_user).emit('game_start_response', success_data);
