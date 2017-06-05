@@ -667,7 +667,7 @@ io.sockets.on('connection', function (socket) {
 
 
 
-			var color = games[game_id];
+			var game = games[game_id];
 			if(('undefined' === typeof game) || !game) {
 				var error_message = 'play_token couldn\'t find your game board';
 				log(error_message);
