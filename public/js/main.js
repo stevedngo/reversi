@@ -305,6 +305,9 @@ var old_board = [
 					['?','?','?','?','?','?','?','?']
 				];
 
+var my_color = ' ';
+
+
 socket.on('game_update',function(payload){
 	console.log('*** Client Log Message: \'game_update\'\n\tpayload: '+JSON.stringify(payload));
 	/* Check for a good board update */
@@ -322,6 +325,24 @@ socket.on('game_update',function(payload){
 	}
 
 	/* Update my color */
+	if(socket.id == payload.game.player_white.socket){
+		my_color = 'white';
+	}
+	else if(socket.id == payload.game.player_black.socket){
+		my_color = 'black';
+	}
+	else{
+		/* Something weird is going on, like three people playing at once */
+		/* Send client back to the lobby */
+		window.location.href = 'lobby.html?username='+username;
+		return;
+	}
+
+
+	$('#my_color').html('<h3 id="my_color">I am '+my_color+'</h3>');
+
+
+
 
 	/* Animate changes to the board */
 	var row,column;
@@ -359,6 +380,25 @@ socket.on('game_update',function(payload){
 				else {
 					$('#'+row+'_'+column).html('<img src="assets/images/error.gif" alt="error"/>');
 				}
+
+				/* Set up interactivity */
+				$('#'+row+'_'+column).off('click');
+				if(board[row][column] == ' '){
+					$('#'+row+'_'+column).addClass('hovered_over');
+					$('#'+row+'_'+column).click(function(r,c){
+						return function(){
+							var payload = {};
+							payload.row = r;
+							payload.column = c;
+							payload.color = my_color;
+							console.log('*** Client Log Message: \'Play token\' payload: '+JSON.stringify(payload));
+							socket.emit('play_token',payload);
+						};
+					}(row,column));
+				}
+				else{
+					$('#'+row+'_'+column).removeClass('hovered_over');
+				}
 			}
 		}
 	}
@@ -366,6 +406,16 @@ socket.on('game_update',function(payload){
 	old_board = board;
 });
 
+
+socket.on('play_token_response',function(payload){
+	console.log('*** Client Log Message: \'play_token_response\'\n\tpayload: '+JSON.stringify(payload));
+	/* Check for a good play_token_response */
+	if(payload.result == 'fail'){
+		console.log(payload.message);
+		alert(payload.message);
+		return;
+	}
+});
 
 
 
